@@ -1,0 +1,9 @@
+<div *ngIf="posts.length === 0; else postsList">
+  <app-empty-state></app-empty-state>
+</div>
+
+<ng-template #postsList>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-y-12">
+    <app-blog-post-item *ngFor="let post of posts" [post]="post"></app-blog-post-item>
+  </div>
+</ng-template>

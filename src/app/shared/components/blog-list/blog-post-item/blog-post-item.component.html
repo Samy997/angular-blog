@@ -1,0 +1,43 @@
+<div
+  class="bg-white shadow-lg drop-shadow-lg rounded-lg overflow-hidden p-6 pb-8 md:h-[580px]"
+>
+  <div class="flex flex-col h-full">
+    <div
+      class="w-full h-[200px] md:h-[240px] bg-gray-200 flex items-center justify-center overflow-hidden"
+    >
+      <img [src]="post.image" alt="Post" class="w-full h-full object-cover" />
+    </div>
+
+    <div class="mt-8 flex flex-col flex-grow">
+      <p class="text-primary text-sm font-semibold capitalize">
+        {{ post.category }}
+      </p>
+      <h2
+        class="text-lg md:text-2xl font-semibold text-title mt-3 flex justify-between"
+      >
+        <span class="w-2/3">{{ post.title }}</span>
+        <a [href]="post.url" target="_blank" rel="noopener noreferrer">
+          <img
+            src="assets/images/arrow-up-right.svg"
+            class="w-2.5 h-2.5 cursor-pointer"
+            alt=""
+            srcset=""
+          />
+        </a>
+      </h2>
+      <p class="text-desc mt-2 line-clamp-3">{{ post.description }}</p>
+
+      <div class="flex items-center mt-14 md:mt-auto">
+        <img
+          [src]="post.authorImage"
+          alt="Author"
+          class="w-8 h-8 rounded-full mr-2"
+        />
+        <div>
+          <p class="text-title text-sm font-medium">{{ post.author }}</p>
+          <p class="text-desc text-sm">{{ post.date | date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
